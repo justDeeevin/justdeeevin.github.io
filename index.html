@@ -24,7 +24,7 @@
       });
 
       document.addEventListener("mousemove", (e) => {
-        const x = e.clientX - window.innerWidth / 2;
+        const x = e.clientX;
         const y =
           e.clientY < window.innerHeight / 2
             ? e.clientY + 0.6 * (window.innerHeight / 2 - e.clientY)
