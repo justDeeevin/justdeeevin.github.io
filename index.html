@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>devin droddy</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="media/devin.jpg" />
+    <base target="_blank" />
+  </head>
+  <body>
+    <canvas id="background"></canvas>
+    <script src="https://unpkg.com/starback@2.1.1/dist/starback.global.js"></script>
+    <script>
+      const canvas = document.getElementById("background");
+      const starback = new Starback(canvas, {
+        type: "dot",
+        quantity: 100,
+        direction: 0,
+        backgroundColor: "#161616",
+        randomOpacity: true,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        starColor: "#dde1e6",
+      });
+
+      document.addEventListener("mousemove", (e) => {
+        const x = e.clientX - window.innerWidth / 2;
+        const y =
+          e.clientY < window.innerHeight / 2
+            ? e.clientY + 0.6 * (window.innerHeight / 2 - e.clientY)
+            : e.clientY;
+        const true_angle = -((Math.atan2(y, x) * 180) / Math.PI - 90);
+        const direction = true_angle < 0 ? 360 + true_angle : true_angle;
+
+        starback.config.direction = direction;
+        starback.stars.config.direction = direction;
+      });
+    </script>
+    <h1 style="margin-bottom: 0">devin droddy</h1>
+    <div class="row">
+      <h4 class="subtle"><i>justdeeevin</i></h4>
+      <!-- Icons from svgrepo.com, collection "Cfpb Design System Icons" -->
+      <a href="https://twitter.com/justdeeevin">
+        <svg
+          viewBox="-1.5 0 19 19"
+          xmlns="http://www.w3.org/2000/svg"
+          class="social twt"
+        >
+          <path
+            d="M15.917 1.666v15.833H.083V1.666zM13.743 6.02a4.702 4.702 0 0 1-1.353.37 2.365 2.365 0 0 0 1.036-1.303 4.725 4.725 0 0 1-1.496.572 2.359 2.359 0 0 0-4.017 2.149 6.685 6.685 0 0 1-4.856-2.462 2.357 2.357 0 0 0 .728 3.146 2.339 2.339 0 0 1-1.067-.295v.03a2.359 2.359 0 0 0 1.89 2.311 2.362 2.362 0 0 1-1.064.04 2.36 2.36 0 0 0 2.202 1.637 4.733 4.733 0 0 1-2.928 1.01 4.838 4.838 0 0 1-.562-.034 6.702 6.702 0 0 0 10.318-5.647c0-.102-.002-.203-.007-.304a4.785 4.785 0 0 0 1.176-1.22z"
+          />
+        </svg>
+      </a>
+      <a href="https://github.com/justdeeevin">
+        <svg
+          viewBox="-1.5 0 19 19"
+          xmlns="http://www.w3.org/2000/svg"
+          class="social gh"
+        >
+          <path
+            d="M15.917 1.666V17.5h-5.15c-.424 0-.557-.238-.557-.455 0-.266.01-1.141.01-2.226a1.935 1.935 0 0 0-.552-1.502c1.808-.202 3.706-.887 3.706-4.005a3.134 3.134 0 0 0-.834-2.177 2.914 2.914 0 0 0-.081-2.147s-.68-.218-2.23.832a7.684 7.684 0 0 0-4.063 0c-1.55-1.05-2.23-.832-2.23-.832a2.918 2.918 0 0 0-.08 2.147 3.142 3.142 0 0 0-.835 2.177c0 3.11 1.894 3.806 3.696 4.011a1.737 1.737 0 0 0-.516 1.084 1.726 1.726 0 0 1-2.361-.674 1.706 1.706 0 0 0-1.243-.836s-.793-.01-.056.494a2.145 2.145 0 0 1 .9 1.187s.478 1.578 2.735 1.088c.004.676.01 1.186.01 1.38 0 .214-.147.454-.553.454H.083V1.666z"
+          />
+        </svg>
+      </a>
+      <a href="https://youtube.com/@justdeeevin">
+        <svg
+          viewBox="-1.5 0 19 19"
+          xmlns="http://www.w3.org/2000/svg"
+          class="social yt"
+        >
+          <path
+            d="M15.917 17.5H.083V1.665h15.834zM13.072 7.013a1.327 1.327 0 0 0-.934-.94 31.353 31.353 0 0 0-4.125-.221 31.353 31.353 0 0 0-4.125.222 1.327 1.327 0 0 0-.933.94 13.917 13.917 0 0 0-.221 2.557 13.917 13.917 0 0 0 .22 2.558 1.327 1.327 0 0 0 .934.94 31.351 31.351 0 0 0 4.125.222 31.351 31.351 0 0 0 4.125-.223 1.327 1.327 0 0 0 .934-.94 13.917 13.917 0 0 0 .22-2.557 13.917 13.917 0 0 0-.22-2.558zm-3.434 2.57L6.932 8.045v3.079z"
+          />
+        </svg>
+      </a>
+    </div>
+    <h3 style="margin-top: 0">dedicated craftsman of quality software</h3>
+    <h2>works</h2>
+    <ul>
+      <li>
+        <span class="row">
+          <a href="https://github.com/justdeeevin/nuhxboard"
+            ><img
+              src="https://raw.githubusercontent.com/justDeeevin/NuhxBoard/refs/heads/main/NuhxBoard.png"
+              height="15"
+              width="15"
+              style="margin-right: 5px"
+            />nuhxboard</a
+          >, a cross-platform input visualizer</span
+        >
+      </li>
+      <li>
+        <a href="https://github.com/communitycheer/gardner-harvesting"
+          >gardner harvesting</a
+        >, a mobile app for collecting harvest data. firebase backend. developed
+        for local nonprofit
+        <a href="https://communitycheer.org">CHEER</a>
+      </li>
+      <li>
+        <span class="row"
+          >something new at
+          <a href="https://pyro.host"
+            ><img
+              src="https://avatars.githubusercontent.com/u/132858781?s=200&v=4"
+              height="15"
+              width="15"
+              style="margin: 0 5px 0 5px"
+            />pyro</a
+          >...</span
+        >
+      </li>
+    </ul>
+    <footer>
+      <p>copyright (c) 2024 devin droddy</p>
+      <p>
+        colors=<a href="https://github.com/nyoom-engineering/oxocarbon"
+          >oxocarbon</a
+        >
+      </p>
+      <p>
+        font=<a href="https://monaspace.githubnext.com">github monaspace</a>
+        neon
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "Github Monaspace Neon";
+  src: url("media/MonaspaceNeon-Regular.woff");
+}
+
+/* Oxocarbon base16 colors */
+:root {
+  --base00: #161616;
+  --base01: #262626;
+  --base02: #393939;
+  --base03: #525252;
+  --base04: #dde1e6;
+  --base05: #f2f4f8;
+  --base06: #ffffff;
+  --base07: #08bdba;
+  --base08: #3ddbd9;
+  --base09: #78a9ff;
+  --base0A: #ee5396;
+  --base0B: #33b1ff;
+  --base0C: #ff7eb6;
+  --base0D: #42be65;
+  --base0E: #be95ff;
+  --base0F: #82cfff;
+}
+
+body {
+  background-color: var(--base00);
+  color: var(--base06);
+  font-family: "Github Monaspace Neon";
+}
+
+a {
+  color: var(--base0B);
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+}
+
+footer > p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.subtle {
+  margin: 0;
+  color: var(--base03);
+}
+
+#background {
+  position: fixed;
+  z-index: -1;
+}
+
+.social {
+  margin: 0;
+  margin-left: 5px;
+  height: 20px;
+  width: 20px;
+}
+
+.twt {
+  fill: var(--base0B);
+}
+
+.gh {
+  fill: var(--base02);
+  height: 21px;
+  width: 21px;
+}
+
+.yt {
+  fill: var(--base0A);
+}
