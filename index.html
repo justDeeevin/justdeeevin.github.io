@@ -36,6 +36,11 @@
         starback.config.direction = direction;
         starback.stars.config.direction = direction;
       });
+
+      window.addEventListener("resize", () => {
+        canvas.setAttribute("width", window.innerWidth);
+        canvas.setAttribute("height", window.innerHeight);
+      });
     </script>
     <h1 style="margin-bottom: 0">devin droddy</h1>
     <div class="row">
