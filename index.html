@@ -27,7 +27,8 @@
         const x = e.clientX;
         const y =
           e.clientY < window.innerHeight / 2
-            ? e.clientY + 0.6 * (window.innerHeight / 2 - e.clientY)
+            ? // Reduces the rate of change of Y past the midpoint
+              e.clientY + 0.6 * (window.innerHeight / 2 - e.clientY)
             : e.clientY;
         const true_angle = -((Math.atan2(y, x) * 180) / Math.PI - 90);
         const direction = true_angle < 0 ? 360 + true_angle : true_angle;
