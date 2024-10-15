@@ -28,13 +28,46 @@ const snowfall = new Starback(snowfall_canvas, {
   starColor,
 });
 
+const bgGradient = new Rainbow();
+bgGradient.setSpectrum("#161616", "#f2f4f8");
+bgGradient.setNumberRange(0, 1000);
+
+const starGradient = new Rainbow();
+starGradient.setSpectrum("#dde1e6", "#262626");
+starGradient.setNumberRange(0, 1000);
+
+const transition = (t) => {
+  const direction = theme === "light" ? 1 : -1;
+  const startIndex = 500 - direction * 500;
+  const startTime = Date.now();
+
+  const loop = () => {
+    const time = Date.now();
+    if (
+      snowfall.config.backgrundColor !==
+        bgGradient.colorAt(500 + direction * 500) &&
+      time - startTime < t
+    ) {
+      const progress = Math.ceil(1000 * ((time - startTime) / t));
+      snowfall.config.backgroundColor = `#${bgGradient.colorAt(
+        startIndex + progress * direction,
+      )}`;
+      snowfall.stars.config.starColor = `#${starGradient.colorAt(
+        startIndex + progress * direction,
+      )}`;
+      setTimeout(loop, 0);
+    }
+  };
+
+  loop();
+};
+
 toggle.addEventListener("change", () => {
   theme = theme === "light" ? "dark" : "light";
   localStorage.setItem("theme", theme);
   document.body.classList.toggle("light");
 
-  snowfall.stars.config.starColor = theme !== "light" ? "#dde1e6" : "#262626";
-  snowfall.config.backgroundColor = theme !== "light" ? "#161616" : "#f2f4f8";
+  transition(400);
 });
 
 document.addEventListener("mousemove", (e) => {
