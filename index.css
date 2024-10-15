@@ -103,6 +103,8 @@ ul {
 
 .yt {
   fill: var(--base0A);
+  height: 21px;
+  width: 21px;
 }
 
 .toggle-container {
