@@ -8,40 +8,15 @@
     <base target="_blank" />
   </head>
   <body>
-    <canvas id="background"></canvas>
-    <script src="https://unpkg.com/starback@2.1.1/dist/starback.global.js"></script>
-    <script>
-      const canvas = document.getElementById("background");
-      const starback = new Starback(canvas, {
-        type: "dot",
-        quantity: 100,
-        direction: 0,
-        backgroundColor: "#161616",
-        randomOpacity: true,
-        width: window.innerWidth,
-        height: window.innerHeight,
-        starColor: "#dde1e6",
-      });
-
-      document.addEventListener("mousemove", (e) => {
-        const x = e.clientX;
-        const y =
-          e.clientY < window.innerHeight / 2
-            ? // Reduces the rate of change of Y past the midpoint
-              e.clientY + 0.6 * (window.innerHeight / 2 - e.clientY)
-            : e.clientY;
-        const true_angle = -((Math.atan2(y, x) * 180) / Math.PI - 90);
-        const direction = true_angle < 0 ? 360 + true_angle : true_angle;
-
-        starback.config.direction = direction;
-        starback.stars.config.direction = direction;
-      });
-
-      window.addEventListener("resize", () => {
-        canvas.setAttribute("width", window.innerWidth);
-        canvas.setAttribute("height", window.innerHeight);
-      });
-    </script>
+    <canvas id="snowfall"></canvas>
+    <div class="row toggle-container">
+      <p>dark</p>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider" id="toggle"></span>
+      </label>
+      <p>light</p>
+    </div>
     <h1 style="margin-bottom: 0">devin droddy</h1>
     <div class="row">
       <h4 class="subtle"><i>justdeeevin</i></h4>
@@ -141,5 +116,8 @@
         mail=<a href="mailto:devin.droddy@gmail.com">devin.droddy@gmail.com</a>
       </p>
     </footer>
+
+    <script src="https://unpkg.com/starback@2.1.1/dist/starback.global.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
