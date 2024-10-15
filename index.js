@@ -1,5 +1,7 @@
 let theme = localStorage.getItem("theme");
 
+const toggle = document.getElementById("toggle");
+
 if (!theme) {
   theme = window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
@@ -8,7 +10,11 @@ if (!theme) {
 }
 
 const snowfall_canvas = document.getElementById("snowfall");
-if (theme === "light") document.body.classList.add("light");
+if (theme === "light") {
+  document.body.classList.add("light");
+  toggle.checked = true;
+}
+
 const backgroundColor = theme !== "light" ? "#161616" : "#f2f4f8";
 const starColor = theme !== "light" ? "#dde1e6" : "#262626";
 const snowfall = new Starback(snowfall_canvas, {
@@ -22,7 +28,7 @@ const snowfall = new Starback(snowfall_canvas, {
   starColor,
 });
 
-document.getElementById("toggle").addEventListener("click", () => {
+toggle.addEventListener("change", () => {
   theme = theme === "light" ? "dark" : "light";
   localStorage.setItem("theme", theme);
   document.body.classList.toggle("light");
