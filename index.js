@@ -44,7 +44,7 @@ const transition = (t) => {
   const loop = () => {
     const time = Date.now();
     if (
-      snowfall.config.backgrundColor !==
+      snowfall.config.backgroundColor !==
         bgGradient.colorAt(500 + direction * 500) &&
       time - startTime < t
     ) {
