@@ -88,3 +88,24 @@ window.addEventListener("resize", () => {
   snowfall_canvas.setAttribute("width", window.innerWidth);
   snowfall_canvas.setAttribute("height", window.innerHeight);
 });
+
+const loadRecentWriting = async () => {
+  const api_url = "https://writing.justdeeevin.dev";
+  const res = await fetch(`${api_url}/api/articles`);
+  const articles = await res.json();
+  const list = document.getElementById("recent-writing");
+  articles.forEach((article) => {
+    const li = document.createElement("li");
+
+    const link = document.createElement("a");
+    link.href = `https://writing.justdeeevin.dev/articles/${article.slug}`;
+    link.innerText = article.title;
+    link.target = "_self";
+
+    li.innerHTML = `${link.outerHTML} - ${article.date}`;
+
+    list.appendChild(li);
+  });
+};
+
+loadRecentWriting();
