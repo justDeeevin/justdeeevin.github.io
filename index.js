@@ -93,6 +93,7 @@ const loadRecentWriting = async () => {
   const api_url = "https://writing.justdeeevin.dev";
   const res = await fetch(`${api_url}/api/articles`);
   const articles = await res.json();
+  articles.length = Math.min(articles.length, 8);
   const list = document.getElementById("recent-writing");
   articles.forEach((article) => {
     const li = document.createElement("li");
