@@ -1,0 +1,3 @@
+= Homepage
+
+This is my homepage. It's just static HTML.
