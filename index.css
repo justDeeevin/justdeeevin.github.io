@@ -164,3 +164,26 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 3vw;
+  }
+  .switch {
+    height: 4vw;
+    width: 10vw;
+  }
+  .slider:before {
+    height: 2vw;
+    width: 2vw;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(6vw);
+    -ms-transform: translateX(6vw);
+    transform: translateX(6vw);
+  }
+  .social {
+    width: 4vw;
+    height: 4vw;
+  }
+}
