@@ -1,189 +1,49 @@
+@import "https://cdn.jsdelivr.net/npm/@webtui/css@0.1.1/dist/base.css";
+@import "./oxocarbon.css";
+
+@import "https://cdn.jsdelivr.net/npm/@webtui/css@0.1.1/dist/utils/box.css";
+
+@import "https://cdn.jsdelivr.net/npm/@webtui/css@0.1.1/dist/components/typography.css";
+@import "https://cdn.jsdelivr.net/npm/@webtui/css@0.1.1/dist/components/badge.css";
+
 @font-face {
   font-family: "Github Monaspace Neon";
-  src: url("media/MonaspaceNeon-Regular.woff");
+  src: url("media/MonaspaceNeonVarVF[wght,wdth,slnt].woff2");
 }
 
-/* Oxocarbon base16 colors */
-:root {
-  --base00: #161616;
-  --base01: #262626;
-  --base02: #393939;
-  --base03: #525252;
-  --base04: #dde1e6;
-  --base05: #f2f4f8;
-  --base06: #ffffff;
-  --base07: #08bdba;
-  --base08: #3ddbd9;
-  --base09: #78a9ff;
-  --base0A: #ee5396;
-  --base0B: #33b1ff;
-  --base0C: #ff7eb6;
-  --base0D: #42be65;
-  --base0E: #be95ff;
-  --base0F: #82cfff;
+@layer utils, components;
+@layer base {
+  :root {
+    --font-family: "Github Monaspace Neon";
+    --font-size: 14pt;
+  }
 }
 
-body.light {
-  --base00: #f2f4f8;
-  --base01: #dde1e6;
-  --base02: #525252;
-  --base03: #161616;
-  --base04: #262626;
-  --base05: #393939;
-  --base06: #525252;
-  --base07: #08bdba;
-  --base08: #ff7eb6;
-  --base09: #ee5396;
-  --base0A: #ff6f00;
-  --base0B: #0f62fe;
-  --base0C: #673ab7;
-  --base0D: #42be65;
-  --base0E: #be95ff;
-  --base0F: #37474f;
+div[box-~="square"] > div.header,
+div[box-~="round"] > div.header,
+div[box-~="double"] > div.header {
+  background-color: var(--background0);
+  padding: 0 1ch;
+  width: fit-content;
 }
 
-body {
-  font-family: "Github Monaspace Neon";
-  background-color: var(--base00);
-  color: var(--base06);
-  transition: 0.4s;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
 }
 
-a {
-  color: var(--base0B);
+div.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer {
   position: fixed;
   bottom: 5px;
-}
-
-footer > p {
-  margin: 0;
-}
-
-ul {
-  list-style-type: square;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.subtle {
-  margin: 0;
-  color: var(--base03);
-}
-
-#snowfall {
-  top: 0;
-  left: 0;
-  position: fixed;
-  z-index: -1;
-}
-
-.social {
-  margin: 0;
-  margin-left: 5px;
-  height: 20px;
-  width: 20px;
-}
-
-.twt {
-  fill: var(--base0B);
-}
-
-.gh {
-  fill: var(--base02);
-  height: 21px;
-  width: 21px;
-}
-
-.yt {
-  fill: var(--base0A);
-  height: 21px;
-  width: 21px;
-}
-
-.toggle-container {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-}
-
-/* switch pulled from w3schools, slightly tweaked */
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 46px;
-  height: 20px;
-  margin: 5px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--base01);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  left: 4px;
-  bottom: 4px;
-  background-color: var(--base06);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-@media only screen and (max-width: 400px) {
-  html {
-    font-size: 3vw;
-  }
-  .switch {
-    height: 4vw;
-    width: 10vw;
-  }
-  .slider:before {
-    height: 2vw;
-    width: 2vw;
-  }
-  input:checked + .slider:before {
-    -webkit-transform: translateX(6vw);
-    -ms-transform: translateX(6vw);
-    transform: translateX(6vw);
-  }
-  .social {
-    width: 4vw;
-    height: 4vw;
-  }
+  left: 5px;
 }

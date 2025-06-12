@@ -1,0 +1,44 @@
+@layer base {
+  [data-webtui-theme="oxocarbon"] {
+    --background0: #161616;
+    --background1: #262626;
+    --background2: #393939;
+    --background3: #525252;
+
+    --foreground0: #ffffff;
+    --foreground1: #f2f4f8;
+    --foreground2: #dde1e6;
+  }
+}
+
+@layer components {
+  [data-webtui-theme|="oxocarbon"] {
+    h1 {
+      color: #3ddbd9;
+    }
+    h2 {
+      color: #08bdba;
+    }
+    h3 {
+      color: #33b1ff;
+    }
+    h4,
+    h5,
+    h6 {
+      color: #78a9ff;
+    }
+
+    p,
+    blockquote,
+    li,
+    [is-~="typography-block"] {
+      a {
+        color: #ff7eb6;
+
+        &:hover {
+          color: #ee5396;
+        }
+      }
+    }
+  }
+}

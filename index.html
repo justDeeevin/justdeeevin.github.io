@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-webtui-theme="oxocarbon">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -7,83 +7,59 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="media/devin.jpg" />
     <base target="_blank" />
+
+    <script src="index.js" defer></script>
   </head>
   <body>
-    <canvas id="snowfall"></canvas>
-    <div class="row toggle-container">
-      <p>dark</p>
-      <label class="switch">
-        <input type="checkbox" id="toggle" />
-        <span class="slider"></span>
-      </label>
-      <p>light</p>
+    <div class="body">
+      <div style="max-width: 40rem">
+        <div box-="square" shear-="top">
+          <div class="header">
+            <strong>devin droddy</strong>
+          </div>
+          <p><strong>dedicated craftsman of quality software</strong></p>
+          <p>
+            <i
+              >justdeeevin -
+              <a href="https://twitter.com/justdeeevin">twitter</a> -
+              <a href="https://github.com/justdeeevin">github</a></i
+            >
+          </p>
+        </div>
+        <h1>software</h1>
+        <ul>
+          <li>
+            <a href="https://github.com/justdeeevin/nuhxboard">nuhxboard</a>, a
+            cross-platform input visualizer
+          </li>
+          <li>
+            <a href="https://github.com/communitycheer/gardener-harvesting"
+              >gardener harvesting</a
+            >, a mobile app for collecting harvest data developed for local
+            nonprofit <a href="https://communitycheer.org">CHEER</a>
+          </li>
+          <li>
+            <a href="https://modrinth.gg">modrinth servers</a> (alongside the
+            <a href="https://pyro.host">pyro</a> team)
+          </li>
+          <li>
+            <a href="https://wordle.justdeeevin.dev">a little wordle clone</a>
+          </li>
+        </ul>
+        <h1>writing</h1>
+        <p>
+          sometimes i write about things i find interesting. located at
+          <a href="https://writing.justdeeevin.dev" target="_self"
+            >writing.justdeeevin.dev</a
+          >
+        </p>
+        <h2>recent</h2>
+        <ul id="recent"></ul>
+      </div>
     </div>
-    <h1 style="margin-bottom: 0">devin droddy</h1>
-    <div class="row">
-      <h4 class="subtle"><i>justdeeevin</i></h4>
-      <!-- Icons from svgrepo.com, collection "Cfpb Design System Icons" -->
-      <a href="https://twitter.com/justdeeevin">
-        <svg
-          viewBox="-1.5 0 19 19"
-          xmlns="http://www.w3.org/2000/svg"
-          class="social twt"
-        >
-          <path
-            d="M15.917 1.666v15.833H.083V1.666zM13.743 6.02a4.702 4.702 0 0 1-1.353.37 2.365 2.365 0 0 0 1.036-1.303 4.725 4.725 0 0 1-1.496.572 2.359 2.359 0 0 0-4.017 2.149 6.685 6.685 0 0 1-4.856-2.462 2.357 2.357 0 0 0 .728 3.146 2.339 2.339 0 0 1-1.067-.295v.03a2.359 2.359 0 0 0 1.89 2.311 2.362 2.362 0 0 1-1.064.04 2.36 2.36 0 0 0 2.202 1.637 4.733 4.733 0 0 1-2.928 1.01 4.838 4.838 0 0 1-.562-.034 6.702 6.702 0 0 0 10.318-5.647c0-.102-.002-.203-.007-.304a4.785 4.785 0 0 0 1.176-1.22z"
-          />
-        </svg>
-      </a>
-      <a href="https://github.com/justdeeevin">
-        <svg
-          viewBox="-1.5 0 19 19"
-          xmlns="http://www.w3.org/2000/svg"
-          class="social gh"
-        >
-          <path
-            d="M15.917 1.666V17.5h-5.15c-.424 0-.557-.238-.557-.455 0-.266.01-1.141.01-2.226a1.935 1.935 0 0 0-.552-1.502c1.808-.202 3.706-.887 3.706-4.005a3.134 3.134 0 0 0-.834-2.177 2.914 2.914 0 0 0-.081-2.147s-.68-.218-2.23.832a7.684 7.684 0 0 0-4.063 0c-1.55-1.05-2.23-.832-2.23-.832a2.918 2.918 0 0 0-.08 2.147 3.142 3.142 0 0 0-.835 2.177c0 3.11 1.894 3.806 3.696 4.011a1.737 1.737 0 0 0-.516 1.084 1.726 1.726 0 0 1-2.361-.674 1.706 1.706 0 0 0-1.243-.836s-.793-.01-.056.494a2.145 2.145 0 0 1 .9 1.187s.478 1.578 2.735 1.088c.004.676.01 1.186.01 1.38 0 .214-.147.454-.553.454H.083V1.666z"
-          />
-        </svg>
-      </a>
-    </div>
-    <h3 style="margin-top: 0">dedicated craftsman of quality software</h3>
-    <h2>works</h2>
-    <ul>
-      <li>
-        <a href="https://github.com/justdeeevin/nuhxboard">nuhxboard</a>, a
-        cross-platform input visualizer
-      </li>
-      <li>
-        <a href="https://github.com/communitycheer/gardner-harvesting"
-          >gardener harvesting</a
-        >, a mobile app for collecting harvest data. firebase backend. developed
-        for local nonprofit
-        <a href="https://communitycheer.org">CHEER</a>
-      </li>
-      <li>
-        <a href="https://modrinth.com/servers">modrinth servers</a> (alongside
-        the <a href="https://pyro.host">Pyro</a> team)
-      </li>
-      <li>
-        a little wordle clone in sveltekit (<a
-          href="https://wordle.justdeeevin.dev"
-          >here</a
-        >)
-      </li>
-    </ul>
-
-    <h2>writing</h2>
-    <p>
-      sometimes i write about things i find interesting. located at
-      <a href="https://writing.justdeeevin.dev" target="_self"
-        >writing.justdeeevin.dev</a
-      >
-    </p>
-    <h3>recent</h3>
-    <ul id="recent-writing"></ul>
-
     <footer>
       <p>
-        copyright (c) 2024 devin droddy
+        copyright (c) 2025 devin droddy
         <i
           ><a href="https://github.com/justdeeevin/justdeeevin.github.io"
             >source</a
@@ -99,9 +75,7 @@
         font=<a href="https://monaspace.githubnext.com">github monaspace</a>
         neon
       </p>
-      <p>
-        background=<a href="https://github.com/zuramai/starback.js">starback</a>
-      </p>
+      <p>ui=<a href="https://webtui.ironclad.sh">webtui</a></p>
       <p>
         mail=<a href="mailto:devin.droddy@gmail.com">devin.droddy@gmail.com</a>
       </p>
@@ -116,9 +90,5 @@
         >
       </p>
     </footer>
-
-    <script src="https://unpkg.com/starback@2.1.1/dist/starback.global.js"></script>
-    <script src="https://unpkg.com/rainbowvis.js@1.1.1/rainbowvis.js"></script>
-    <script src="index.js"></script>
   </body>
 </html>
