@@ -1,0 +1,4 @@
+[submodule "webtui"]
+	path = webtui
+	url = ./.
+	branch = webtui
