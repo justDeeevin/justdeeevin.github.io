@@ -58,7 +58,7 @@ footer {
   bottom: 5px;
 }
 
-footer > p {
+footer>p {
   margin: 0;
 }
 
@@ -155,11 +155,11 @@ ul {
   transition: 0.4s;
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -169,19 +169,23 @@ input:checked + .slider:before {
   html {
     font-size: 3vw;
   }
+
   .switch {
     height: 4vw;
     width: 10vw;
   }
+
   .slider:before {
     height: 2vw;
     width: 2vw;
   }
-  input:checked + .slider:before {
+
+  input:checked+.slider:before {
     -webkit-transform: translateX(6vw);
     -ms-transform: translateX(6vw);
     transform: translateX(6vw);
   }
+
   .social {
     width: 4vw;
     height: 4vw;
